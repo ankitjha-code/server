@@ -53,13 +53,7 @@ const storage = new CloudinaryStorage({
 const upload = multer({ storage: storage });
 
 const app = express();
-app.use(
-  cors({
-    origin: "http://localhost:5173",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "x-admin-wallet", "x-current-wallet"],
-  })
-);
+app.use(cors());
 app.use(express.json());
 
 // Initialize Solana connection
